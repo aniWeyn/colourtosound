@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,OAAO,CAAA;EACH,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "index.scss",
+        "_colors.scss",
+        "_colorpicker.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

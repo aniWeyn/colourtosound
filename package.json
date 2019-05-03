@@ -9,10 +9,14 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "bootstrap-colorpicker": "^3.1.1",
     "bootstrap-vue": "^2.0.0-rc.18",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.0",
+    "tone": "^13.4.9",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vue-slider-component": "^3.0.31",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -22,6 +26,9 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "vue-template-compiler": "^2.5.21"
   }
 }
