@@ -1,0 +1,27 @@
+.research{
+    width: 100vw; 
+    height: 100vh;
+    color: $researchElements;
+}
+
+.grey{
+    background-color: $researchColor; 
+}
+
+.btn-outline-secondary{
+    color: $researchElements;
+    border-color: $researchElements;
+    min-width: 60px;
+}
+
+.btn-outline-secondary:hover{
+    background-color: $researchElements;
+    border-color: $researchElements;
+    color:  $researchColor; 
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active{
+    background-color: $researchElements;
+    border-color: $researchElements;
+    color:  $researchColor; 
+}

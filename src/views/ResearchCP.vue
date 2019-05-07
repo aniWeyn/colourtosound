@@ -8,7 +8,7 @@
 import ConsentForm from "../components/ConsentForm.vue"
 import consent from "../data/CP/consentform.json"
 export default {
-  name: "research",
+  name: "researchCP",
   data() {
     return {
         html: consent

@@ -1,0 +1,16 @@
+{
+    "research": [
+        {
+            "notes": {
+                "A4": "true",
+                "B4": "true", 
+                "C5": "true",
+                "D5": "true",
+                "E5": "true",
+                "F5": "true",
+                "G5": "true",
+                "A5": "true"
+                    }, 
+            "amoutOfQuestions": "8"
+        }
+]}

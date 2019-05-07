@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section v-if="consentVisible">
+    <section v-if="consentVisible" class="pb-3">
     <div  v-for="(element, index) in consent" :key="index">
       <h4>{{element.title}}</h4>
       <p>{{element.paragraph}}</p>
@@ -22,6 +22,7 @@ export default {
   methods: {
     next(){
       this.consentVisible = false
+      this.$store.commit("updateResearch", true);
     }
   }
 };

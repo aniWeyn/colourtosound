@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 # /dist
+/src/data/AIC/firebase.js
+deploy.sh
 
 # local env files
 .env.local

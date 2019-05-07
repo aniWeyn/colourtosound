@@ -12,6 +12,7 @@
     "bootstrap-colorpicker": "^3.1.1",
     "bootstrap-vue": "^2.0.0-rc.18",
     "core-js": "^2.6.5",
+    "firebase": "^5.11.1",
     "jquery": "^3.4.0",
     "tone": "^13.4.9",
     "vue": "^2.6.10",
@@ -22,7 +23,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
+    "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",

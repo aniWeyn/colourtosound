@@ -11,6 +11,9 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./design/index.css"
 
+import 'firebase/auth';
+import 'firebase/database';
+
 Vue.config.productionTip = false
 
 new Vue({
