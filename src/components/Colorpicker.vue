@@ -91,7 +91,7 @@ export default {
     get () {
       return this.$store.state.color
     },
-    set (value) {
+    set () {
       this.$store.commit("updateColor", "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)")
     }},
   },

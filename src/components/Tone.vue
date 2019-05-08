@@ -16,8 +16,6 @@ export default {
   name: "tone",
   data() {
     return {
-      notesArray: notesArray,
-      notesArrayIndex: notesArrayIndex,
       userAuth: {
         isAnonymous: String,
         uid: String
@@ -35,19 +33,11 @@ export default {
     firebase
       .auth()
       .signInAnonymously()
-      .catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
-      });
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         self.userAuth = user;
-        console.log("uid: ", self.userAuth.uid);
-        self.userAuth = user;
-      } else {
-      }
+      } 
     });
   },
   methods: {

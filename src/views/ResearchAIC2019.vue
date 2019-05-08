@@ -5,7 +5,6 @@
     <colorpicker v-if="research"/>
     <div class="">
       <Tone v-if="research"/>
-      <ButtonNext v-if="research"/>
     </div>
     <div v-if="thanks">
       Thank you for participation in the test. 
@@ -17,7 +16,6 @@
 import ConsentForm from "../components/ConsentForm.vue";
 import colorpicker from "../components/Colorpicker.vue";
 import Tone from "../components/Tone.vue";
-import ButtonNext from "../components/ButtonNext.vue";
 import Progressbar from "../components/Progressbar.vue";
 import consent from "../data/AIC/consentform.json";
 import researchData from "../data/AIC/research2.json";
@@ -34,8 +32,7 @@ export default {
     ConsentForm,
     colorpicker,
     Tone,
-    Progressbar,
-    ButtonNext
+    Progressbar
   },
   created() {
     this.test();
