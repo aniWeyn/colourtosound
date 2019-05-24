@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <section v-if="consentVisible" class="pb-3">
     <div  v-for="(element, index) in consent" :key="index">
       <h4>{{element.title}}</h4>
@@ -29,4 +29,7 @@ export default {
 </script>
 
 <style>
+.container{
+  color: black;
+}
 </style>
