@@ -1,10 +1,14 @@
 <template>
   <div class="container-fluid p-3">
+    <h3 v-if="showInstructions" class="d-flex justify-content-center">Instructions</h3>
+    <p v-if="showInstructions" class="d-flex justify-content-center">Please choose a colour which fits best with a heard sound.</p>
     <div class="d-flex justify-content-center p-3">
       <div class="square" :style="{'background-color': color}"></div>
     </div>
+    <p v-if="showInstructions" class="d-flex justify-content-center">To change colour please move range sliders.</p>
     <div class="col-md-4 offset-md-4">
       <div class="p-3">
+        <p v-if="showInstructions">Hue</p>
       <vue-slider
         v-model="hue"
         :min="0"
@@ -15,6 +19,7 @@
       />
       </div>
       <div class="p-3">
+      <p v-if="showInstructions">Saturation</p>
       <vue-slider
         v-model="saturation"
         :min="0"
@@ -25,6 +30,7 @@
       />
       </div>
       <div class="p-3">
+      <p v-if="showInstructions">Lightness</p>
       <vue-slider
         v-model="lightness"
         :min="0"
@@ -35,11 +41,8 @@
       />
       </div>
     </div>
-    <!--<div class="col-md-4 offset-md-4">
-      HSL: {{hue}}, {{saturation}}, {{lightness}}
-      <br>
-      HSL: {{color}}
-    </div>-->
+    <p v-if="showInstructions" class="d-flex justify-content-center">To listen the sound again tap/click button play.</p>
+    <p v-if="showInstructions" class="d-flex justify-content-center">If you feel ready click next to start the experiment!</p>
   </div>
 </template>
 <script>
@@ -94,6 +97,8 @@ export default {
     set () {
       this.$store.commit("updateColor", "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)")
     }},
+    showInstructions() {
+      return this.$store.state.showInstructions},
   },
 };
 </script>

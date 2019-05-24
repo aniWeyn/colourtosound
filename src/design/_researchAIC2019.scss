@@ -1,11 +1,15 @@
 .research{
-    width: 100vw; 
-    height: 100vh;
+    min-width: 100vw; 
+    min-height: 100vh;
     color: $researchElements;
 }
 
 .grey{
     background-color: $researchColor; 
+}
+
+.near{
+    max-width: 100px;
 }
 
 .btn-outline-secondary{

@@ -22,6 +22,7 @@ export default new Vuex.Store({
     saturation: 0,
     lightness: 50,
     color: "hsl(0, 0%, 50%)",
+    showInstructions: true
   },
   mutations: {
     updateConsent(state)
@@ -69,6 +70,10 @@ export default new Vuex.Store({
     },
     updateLightness(state, lightness){
       state.lightness = lightness
+    },
+    updateshowInstructions(state)
+    {
+      state.showInstructions = false
     }
   },
   actions: {

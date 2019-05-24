@@ -8,13 +8,17 @@ vue-slider {
 }
 
 .research {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   color: #b3b3b3;
 }
 
 .grey {
   background-color: #7f7f7f;
+}
+
+.near {
+  max-width: 100px;
 }
 
 .btn-outline-secondary {

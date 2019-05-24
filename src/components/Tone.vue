@@ -1,9 +1,9 @@
 <template>
-  <div class="d-flex justify-content-between">
-    <button @click="startTone()" class="btn btn btn-outline-secondary">
-      <i class="fas fa-play"></i>
-    </button>
-    <button class="btn btn-outline-secondary" @click="updateArray()" :disabled="buttonNext">Next</button>
+  <div class="d-flex justify-content-between container-fluid">
+      <button @click="startTone()" class="btn btn btn-outline-secondary">
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="btn btn-outline-secondary" @click="updateArray()" :disabled="buttonNext">Next</button>
   </div>
 </template>
 
@@ -30,14 +30,12 @@ export default {
     );
     let self = this;
     //debugger;
-    firebase
-      .auth()
-      .signInAnonymously()
+    firebase.auth().signInAnonymously();
 
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         self.userAuth = user;
-      } 
+      }
     });
   },
   methods: {
@@ -50,14 +48,16 @@ export default {
     },
     updateArray() {
       if (this.notesArrayIndex + 1 < this.notesArrayLength) {
-        let firebase = db;
-        firebase.ref("/users/"+this.userAuth.uid).push({
-          note: this.notesArray[this.notesArrayIndex].notes,
-          color: this.color,
-          hue: this.hue,
-          saturation: this.saturation,
-          lightness: this.lightness
-        });
+        if (this.showInstructions === true) {
+          let firebase = db;
+          firebase.ref("/users/" + this.userAuth.uid).push({
+            note: this.notesArray[this.notesArrayIndex].notes,
+            color: this.color,
+            hue: this.hue,
+            saturation: this.saturation,
+            lightness: this.lightness
+          });
+        }
         this.$store.commit("blockButtonNext", true);
         this.$store.commit("updateNotesArrayIndex");
         this.$store.commit("updateColor", "hsl(0, 0%, 50%)");
@@ -66,6 +66,7 @@ export default {
         this.$store.commit("updateHue", 0);
         this.$store.commit("updateHue", 0);
         this.$store.commit("updateAnswersNote", true);
+        this.$store.commit("updateshowInstructions");
         this.startTone();
       } else {
         this.$store.commit("updateThanks");
@@ -81,7 +82,8 @@ export default {
     color: state => state.color,
     hue: state => state.hue,
     saturation: state => state.saturation,
-    lightness: state => state.lightness
+    lightness: state => state.lightness,
+    showInstructions: state => state.showInstructions
   })
 };
 </script>
