@@ -1,11 +1,32 @@
 {
     "consent": [
-        {"title": "Welcome to the Sound To Color Experiment", "paragraph": "This is an inquiry about participation in a research project where the main purpose is to study corelation between heard sound and color associations. In this letter we will give you information about the purpose of the project and what your participation will involve."},
-        {"title": "Purpose of the project", "paragraph": "Visually impaired people have a chance to distinguish colours through sensory devices. The sensory devices read light waves and interpret them as colours. How should the sounds be defined to represent colour? What kind of translation should be used? The purpose of this research is to observe sound to colour association of non-visually impaired people and compare them to existing scales used for sensory devices. This research is a part of IMT4894 - Advanced Project Work course which is given by NTNU in Gjøvik. In this research personal data are not collected. You cannot be identified in the collected data. Only the sound frequency and hue will be processed during the statistical analysis."},
-        {"title": "Who is responsible for the research project?", "paragraph": "Person responsible for this project is Sabina Niewiadomska (sabinan@stud.ntnu.no), student of NTNU in Gjøvik."},
-        {"title": "What does participation involve for you?", "paragraph": "In this research you will be asked to associate a heard sound with a color. Research might takes around 10-20 minutes, depends on your tempo."},
-        {"title": "Participation is voluntary", "paragraph": "Participation in the project is voluntary. If you chose to participate, you can withdraw your consent at any time without giving a reason. All information about you will then be made anonymous. There will be no negative consequences for you if you chose not to participate or later decide to withdraw."},
-        {"title": "How to withdraw?", "paragraph": "There are two ways of withdrawing from the study: without saving the answers, just close the website. With saving answers: please scroll down to the bottom of the page and click green button Send your answers!"},
-        {"title": "", "paragraph": "To participate in the study please turn on your speakers. Participation in the study is possible with a use of smartphone and personal computer."}
+      {
+        "title": "Welcome to the research in cross-modal correspondences of colour and sound",
+        "paragraph": "This is an inquiry about participation in a research project where the main purpose is to study corelation between heard sound and colour associations. In this letter we will give you information about the purpose of the project and what your participation will involve."
+      },
+      {
+        "title": "Purpose of the study",
+        "paragraph": "This study tries to find correlations between colour and sound. The results of the study might help researchers to create suitable sonification method of colour which in the future will be applied in sensory substitution device (SSD). SSD can provide information about colour to people who are visually impaired or colour blind."
+      },
+      {
+        "title": "Who is responsible for the research project?",
+        "paragraph": "Person responsible for this project is Sabina Niewiadomska (sabinan@stud.ntnu.no), student of NTNU in Gjøvik."
+      },
+      {
+        "title": "What does participation involve for you?",
+        "paragraph": "In this research, you will be asked to fill small survey, associate a heard sound with displayed colour, associate a displayed colour to a heard sound, give a feedback about research. The experiment will take around 15 to 20 minutes. Your results will be displayed at the end of study."
+      },
+      {
+        "title": "Participation is voluntary",
+        "paragraph": "Participation in the study is voluntary. If you chose to participate, you can withdraw your consent at any time without giving a reason. All information about you will then be made anonymous. There will be no negative consequences for you if you chose not to participate or later decide to withdraw."
+      },
+      {
+        "title": "How to withdraw?",
+        "paragraph": "To withdraw from the study just close the website."
+      },
+      {
+        "title": "",
+        "paragraph": "To participate in the study please wear your headphones or turn on your speakers. Participation in the study is possible with the use of smartphone and personal computer."
+      }
     ]
-}
+  }
