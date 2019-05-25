@@ -1,48 +1,63 @@
 <template>
   <div class="container-fluid p-3">
     <h3 v-if="showInstructions" class="d-flex justify-content-center">Instructions</h3>
-    <p v-if="showInstructions" class="d-flex justify-content-center">Please choose a colour which fits best with a heard sound.</p>
+    <p
+      v-if="showInstructions"
+      class="d-flex justify-content-center"
+    >Please choose a colour which fits best with a heard sound.</p>
     <div class="d-flex justify-content-center p-3">
       <div class="square" :style="{'background-color': color}"></div>
     </div>
-    <p v-if="showInstructions" class="d-flex justify-content-center">To change colour please move range sliders.</p>
+    <p
+      v-if="showInstructions"
+      class="d-flex justify-content-center"
+    >To change colour please move range sliders.</p>
     <div class="col-md-4 offset-md-4">
       <div class="p-3">
         <p v-if="showInstructions">Hue</p>
-      <vue-slider
-        v-model="hue"
-        :min="0"
-        :max="360"
-        :interval="1"
-        :process-style="{ backgroundColor: 'hsl(0,0%,55%)'}"
-        @change="unlockNext()"
-      />
+        <vue-slider
+          v-model="hue"
+          :tooltip="'none'"
+          :min="0"
+          :max="360"
+          :interval="1"
+          :process-style="{ backgroundColor: 'hsl(0,0%,55%)'}"
+          @change="unlockNext()"
+        />
       </div>
       <div class="p-3">
-      <p v-if="showInstructions">Saturation</p>
-      <vue-slider
-        v-model="saturation"
-        :min="0"
-        :max="100"
-        :interval="1"
-        :process-style="{ backgroundColor: 'hsl(0,0%,55%)' }"
-        @change="unlockNext()"
-      />
+        <p v-if="showInstructions">Saturation</p>
+        <vue-slider
+          :tooltip="'none'"
+          v-model="saturation"
+          :min="0"
+          :max="100"
+          :interval="1"
+          :process-style="{ backgroundColor: 'hsl(0,0%,55%)' }"
+          @change="unlockNext()"
+        />
       </div>
       <div class="p-3">
-      <p v-if="showInstructions">Lightness</p>
-      <vue-slider
-        v-model="lightness"
-        :min="0"
-        :max="100"
-        :interval="1"
-        :process-style="{ backgroundColor: 'hsl(0,0%,55%)' }"
-        @change="unlockNext()"
-      />
+        <p v-if="showInstructions">Lightness</p>
+        <vue-slider
+          :tooltip="'none'"
+          v-model="lightness"
+          :min="0"
+          :max="100"
+          :interval="1"
+          :process-style="{ backgroundColor: 'hsl(0,0%,55%)' }"
+          @change="unlockNext()"
+        />
       </div>
     </div>
-    <p v-if="showInstructions" class="d-flex justify-content-center">To listen the sound again tap/click button play.</p>
-    <p v-if="showInstructions" class="d-flex justify-content-center">If you feel ready click next to start the experiment!</p>
+    <p
+      v-if="showInstructions"
+      class="d-flex justify-content-center"
+    >To listen the sound again tap/click button play.</p>
+    <p
+      v-if="showInstructions"
+      class="d-flex justify-content-center"
+    >If you feel ready click next to start the experiment!</p>
   </div>
 </template>
 <script>
@@ -54,52 +69,67 @@ export default {
     VueSlider
   },
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
-    unlockNext(){
-      this.$store.commit("blockButtonNext", false)
-        //this.$store.commit("updateSaturation", value)
+    unlockNext() {
+      this.$store.commit("blockButtonNext", false);
+      //this.$store.commit("updateSaturation", value)
 
-        //this.$store.commit("updateLightness", value)
-  
-      this.$store.commit("updateColor", "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)")
+      //this.$store.commit("updateLightness", value)
+
+      this.$store.commit(
+        "updateColor",
+        "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)"
+      );
     }
   },
-  computed:{
+  computed: {
     hue: {
-    get () {
-      return this.$store.state.hue
+      get() {
+        return this.$store.state.hue;
+      },
+      set(value) {
+        this.$store.commit("updateHue", value);
+      }
     },
-    set (value) {
-      this.$store.commit('updateHue', value)
-    }},
     saturation: {
-    get () {
-      return this.$store.state.saturation
+      get() {
+        return this.$store.state.saturation;
+      },
+      set(value) {
+        this.$store.commit("updateSaturation", value);
+      }
     },
-    set (value) {
-      this.$store.commit('updateSaturation', value)
-    }},
     lightness: {
-    get () {
-      return this.$store.state.lightness
+      get() {
+        return this.$store.state.lightness;
+      },
+      set(value) {
+        this.$store.commit("updateLightness", value);
+      }
     },
-    set (value) {
-      this.$store.commit('updateLightness', value)
-    }},
     color: {
-    get () {
-      return this.$store.state.color
+      get() {
+        return this.$store.state.color;
+      },
+      set() {
+        this.$store.commit(
+          "updateColor",
+          "hsl(" +
+            this.hue +
+            "," +
+            this.saturation +
+            "%," +
+            this.lightness +
+            "%)"
+        );
+      }
     },
-    set () {
-      this.$store.commit("updateColor", "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)")
-    }},
     showInstructions() {
-      return this.$store.state.showInstructions},
-  },
+      return this.$store.state.showInstructions;
+    }
+  }
 };
 </script>
 
