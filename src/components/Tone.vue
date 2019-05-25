@@ -79,7 +79,6 @@ export default {
         this.$store.commit("updateSaturation", 0);
         this.$store.commit("updateLightness", 50);
         this.$store.commit("updateHue", 0);
-        this.$store.commit("updateHue", 0);
         this.$store.commit("updateshowInstructions");
         this.startTone();
       } else {
