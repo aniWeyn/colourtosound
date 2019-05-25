@@ -22,7 +22,8 @@ export default new Vuex.Store({
     saturation: 0,
     lightness: 50,
     color: "hsl(0, 0%, 50%)",
-    showInstructions: true
+    showInstructions: true,
+    surveyVisible: false
   },
   mutations: {
     updateConsent(state)
@@ -74,6 +75,10 @@ export default new Vuex.Store({
     updateshowInstructions(state)
     {
       state.showInstructions = false
+    },
+    updateSurveyVisible(state, bool)
+    {
+      state.surveyVisible = bool
     }
   },
   actions: {

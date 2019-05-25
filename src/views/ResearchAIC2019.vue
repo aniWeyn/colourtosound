@@ -1,6 +1,7 @@
 <template>
   <div class="research py-3" :class="{ grey: research }">
     <ConsentForm v-bind="html"/>
+    <Survey />
     <Progressbar v-if="research"/>
     <colorpicker v-if="research"/>
     <div class="">
@@ -19,6 +20,7 @@ import Tone from "../components/Tone.vue";
 import Progressbar from "../components/Progressbar.vue";
 import consent from "../data/AIC/consentform.json";
 import researchData from "../data/AIC/research2.json";
+import Survey from "../components/Survey.vue"
 import { mapState } from "vuex";
 export default {
   name: "researchAIC",
@@ -32,7 +34,8 @@ export default {
     ConsentForm,
     colorpicker,
     Tone,
-    Progressbar
+    Progressbar,
+    Survey
   },
   created() {
     this.test();

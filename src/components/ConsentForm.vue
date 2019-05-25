@@ -22,7 +22,7 @@ export default {
   methods: {
     next(){
       this.consentVisible = false
-      this.$store.commit("updateResearch", true);
+      this.$store.commit("updateSurveyVisible", true);
     }
   }
 };
