@@ -82,7 +82,7 @@ export default {
         this.$store.commit("updateshowInstructions");
         this.startTone();
       } else {
-        this.$store.commit("updateThanks");
+        this.$store.commit("updateThanks", true);
         this.$store.commit("updateResearch", false);
       }
     }
