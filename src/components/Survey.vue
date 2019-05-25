@@ -106,7 +106,6 @@ export default {
       this.$store.commit("updateResearch", true);
     },
     addAnswer(question, answer) {
-      debugger;
       if (question === 0) {
         this.selectedArray[0].answer = answer
       }
