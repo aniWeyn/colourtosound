@@ -19,7 +19,14 @@ export default {
       userAuth: {
         isAnonymous: String,
         uid: String
-      }
+      },
+      answers: [{
+      note: String,
+      color: String,
+      hue: String,
+      saturation: String,
+      lightness: String
+    }]
     };
   },
   created() {
@@ -29,7 +36,6 @@ export default {
       "8n"
     );
     let self = this;
-    //debugger;
     firebase.auth().signInAnonymously();
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -47,17 +53,26 @@ export default {
       );
     },
     updateArray() {
-      if (this.notesArrayIndex + 1 < this.notesArrayLength) {
-        if (this.showInstructions === true) {
+      if (this.notesArrayIndex + 1 <= this.notesArrayLength) {
+        if (this.showInstructions === false) {
           let firebase = db;
-          firebase.ref("/users/" + this.userAuth.uid).push({
+          firebase.ref("/users/" + this.userAuth.uid + '/colourtosound/').push({
             note: this.notesArray[this.notesArrayIndex].notes,
             color: this.color,
             hue: this.hue,
             saturation: this.saturation,
             lightness: this.lightness
           });
+          
+          this.answers.note = this.notesArray[this.notesArrayIndex].notes,
+          this.answers.color = this.color
+          this.answers.hue = this.hue
+          this.answers.saturation = this.saturation
+          this.answers.lightness = this.lightness
+          this.$store.commit("updateAnswersNote", this.answers);
         }
+      }
+        if (this.notesArrayIndex + 1 < this.notesArrayLength) {
         this.$store.commit("blockButtonNext", true);
         this.$store.commit("updateNotesArrayIndex");
         this.$store.commit("updateColor", "hsl(0, 0%, 50%)");
@@ -65,7 +80,6 @@ export default {
         this.$store.commit("updateLightness", 50);
         this.$store.commit("updateHue", 0);
         this.$store.commit("updateHue", 0);
-        this.$store.commit("updateAnswersNote", true);
         this.$store.commit("updateshowInstructions");
         this.startTone();
       } else {

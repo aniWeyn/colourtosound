@@ -19,7 +19,7 @@ import colorpicker from "../components/Colorpicker.vue";
 import Tone from "../components/Tone.vue";
 import Progressbar from "../components/Progressbar.vue";
 import consent from "../data/AIC/consentform.json";
-import researchData from "../data/AIC/research2.json";
+import researchData from "../data/AIC/research.json";
 import Survey from "../components/Survey.vue"
 import { mapState } from "vuex";
 export default {
@@ -27,7 +27,8 @@ export default {
   data() {
     return {
       html: consent,
-      data: researchData
+      data: researchData,
+      trial: []
     };
   },
   components: {
@@ -47,18 +48,29 @@ export default {
   }),
   methods: {
     test() {
-      if (this.data && this.data.research.length > 0) {
-          this.data.research.forEach(item => {
+      this.trial.push(this.data.research[0].low2[this._.random(this.data.research[0].low2.length)])
+      this.trial.push(this.data.research[1].low3[this._.random(this.data.research[1].low3.length)])
+      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)])
+      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)])
+      this.trial.push(this.data.research[3].high5[this._.random(this.data.research[3].high5.length)])
+      this.trial.push(this.data.research[4].high6[this._.random(this.data.research[4].high6.length)])
+      
+      //this.trial.forEach(item => {
+        //this.trial.push(item)
+        //this.trial.push(item)
+      //})
+
+      this.trial.push(this.trial[this._.random(this.trial.length)])
+      this.trial = this._.shuffle(this.trial)
+
+      if (this.trial && this.trial.length > 0) {
+          this.trial.forEach(item => {
             if(item.note)
             {
               this.$store.commit("updateNotes", item.note);
             }
-            if(item.shuffle)
-            {
-              this.$store.commit("updateShuffle", item.shuffle);
-            }
           });
-          this.$store.commit("updateAmountOfQuestions", this.data.research.length -1);
+          this.$store.commit("updateAmountOfQuestions", this.trial.length);
       }
     }
   }

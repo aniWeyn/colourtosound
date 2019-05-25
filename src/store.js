@@ -14,7 +14,10 @@ export default new Vuex.Store({
     shuffle: false,
     answers: [{
       note: String,
-      color: String
+      color: String,
+      hue: String,
+      saturation: String,
+      lightness: String
     }],
     thanks:false,
     blockButtonNext: true,
@@ -44,8 +47,7 @@ export default new Vuex.Store({
     },
     updateAnswersNote(state, answers)
     {
-      state.answers.note = answers.note,
-      state.answers.color = answers.color
+      state.answers.push({note: answers.note, color: answers.color, hue: answers.hue, saturation: answers.saturation, lightness: answers.lightness})
     },
     updateAmountOfQuestions(state, amount)
     {
