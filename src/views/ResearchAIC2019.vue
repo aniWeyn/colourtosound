@@ -8,10 +8,12 @@
       <Tone v-if="research"/>
     </div>
     <Feedback v-if="thanks" />
+    <Results v-if="showResults" />
   </div>
 </template>
 
 <script>
+import Results from "../components/Results.vue";
 import Feedback from "../components/Feedback.vue";
 import ConsentForm from "../components/ConsentForm.vue";
 import colorpicker from "../components/Colorpicker.vue";
@@ -36,7 +38,8 @@ export default {
     Tone,
     Progressbar,
     Survey,
-    Feedback
+    Feedback,
+    Results
   },
   created() {
     this.test();
@@ -44,7 +47,8 @@ export default {
   },
   computed: mapState({
     research: state => state.research,
-    thanks: state => state.thanks
+    thanks: state => state.thanks,
+    showResults: state => state.showResults
   }),
   methods: {
     test() {

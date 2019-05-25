@@ -13,11 +13,12 @@ export default new Vuex.Store({
     notesArrayLength: 0,
     shuffle: false,
     answers: [{
-      note: String,
-      color: String,
-      hue: String,
-      saturation: String,
-      lightness: String
+      note: "",
+      color: "",
+      hue: "",
+      saturation: "",
+      lightness: "",
+      octave: ""
     }],
     thanks:false,
     blockButtonNext: true,
