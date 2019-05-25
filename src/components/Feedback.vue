@@ -24,7 +24,6 @@
       <div class="input-group p-3">
         <textarea class="form-control" aria-label="With textarea" v-model="text"></textarea>
       </div>
-      Text: {{text}}
       <div class="d-flex justify-content-end container-fluid">
         <button class="btn btn-outline-secondary" @click="next()">Next</button>
       </div>
