@@ -7,13 +7,12 @@
     <div class="">
       <Tone v-if="research"/>
     </div>
-    <div v-if="thanks">
-      Thank you for participation in the test. 
-    </div>
+    <Feedback v-if="thanks" />
   </div>
 </template>
 
 <script>
+import Feedback from "../components/Feedback.vue";
 import ConsentForm from "../components/ConsentForm.vue";
 import colorpicker from "../components/Colorpicker.vue";
 import Tone from "../components/Tone.vue";
@@ -36,7 +35,8 @@ export default {
     colorpicker,
     Tone,
     Progressbar,
-    Survey
+    Survey,
+    Feedback
   },
   created() {
     this.test();

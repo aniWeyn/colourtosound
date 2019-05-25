@@ -26,6 +26,7 @@ export default new Vuex.Store({
     lightness: 50,
     color: "hsl(0, 0%, 50%)",
     showInstructions: true,
+    showResults: false,
     surveyVisible: false
   },
   mutations: {
@@ -56,8 +57,8 @@ export default new Vuex.Store({
     updateShuffle(state, shuffle){
       state.shuffle = shuffle
     },
-    updateThanks(state){
-      state.thanks = true
+    updateThanks(state, bool){
+      state.thanks = bool
     },
     blockButtonNext(state, bool){
       state.blockButtonNext = bool
@@ -81,6 +82,10 @@ export default new Vuex.Store({
     updateSurveyVisible(state, bool)
     {
       state.surveyVisible = bool
+    },
+    updateResults(state, bool)
+    {
+      state.showResults = bool
     }
   },
   actions: {
