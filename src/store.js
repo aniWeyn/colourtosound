@@ -9,6 +9,7 @@ export default new Vuex.Store({
     isConsentAccepted: false,
     research: false,
     notes: [],
+    notesOrdered: [],
     notesArrayIndex: 0,
     notesArrayLength: 0,
     shuffle: false,
@@ -28,7 +29,8 @@ export default new Vuex.Store({
     color: "hsl(0, 0%, 50%)",
     showInstructions: true,
     showResults: false,
-    surveyVisible: false
+    surveyVisible: false,
+    showSoundPicker: false,
   },
   mutations: {
     updateConsent(state)
@@ -42,6 +44,10 @@ export default new Vuex.Store({
     updateNotes(state, notes)
     {
       state.notes.push({notes})
+    },
+    updateNotesOrdered(state, notes)
+    {
+      state.notesOrdered.push({notes})
     },
     updateNotesArrayIndex(state)
     {
@@ -87,6 +93,9 @@ export default new Vuex.Store({
     updateResults(state, bool)
     {
       state.showResults = bool
+    },
+    updateSoundPicker(state, bool){
+      state.showSoundPicker = bool
     }
   },
   actions: {
