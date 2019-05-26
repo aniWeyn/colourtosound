@@ -10,9 +10,11 @@
     border: 0px !important;
 }
 
+@media screen and (max-width: 600px) {
 .vue-slider-dot {
-    width: 20px !important;
-    height: 20px !important;
+    width: 30px !important;
+    height: 30px !important;
+}
 }
 
 .vue-slider{
