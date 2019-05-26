@@ -26,6 +26,11 @@ export default new Vuex.Store({
     surveyVisible: false,
     showSoundPicker: false,
     showColorPicker: false,
+    researchStartTime: "",
+    soundToColourStartTime: "",
+    soundToColourStopTime: "",
+    colourToSoundStartTime: "",
+    colourToSoundStopTime: "",
   },
   mutations: {
     updateConsent(state)
@@ -102,7 +107,22 @@ export default new Vuex.Store({
     },
     updateColorPicker(state, bool){
       state.showColorPicker = bool
-    }
+    },
+    updateResearchStartTime(state){
+      state.researchStartTime = Date.now()
+    },
+    updateSoundToColourStartTime(state){
+      state.soundToColourStartTime = Date.now()
+    },
+    updateSoundToColourStopTime(state){
+      state.soundToColourStopTime = Date.now()
+    },
+    updateColourToSoundStartTime(state){
+      state.colourToSoundStartTime = Date.now()
+    },
+    updateColourToSoundStopTime(state){
+      state.colourToSoundStopTime = Date.now()
+    },
   },
   actions: {
 
