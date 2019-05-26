@@ -17,7 +17,7 @@
       </div>
     </div>
     <h5>Part 2 - Colour to sound</h5>
-    <div v-for="(itemTwo, indexTwo) in answersTwo" :key="indexTwo" class>
+    <div v-for="(itemTwo, indexTwo) in answersTwo" :key="indexTwo+Q" class>
       <div class="col-md-12 d-flex justify-content-center">
         <h5 v-if="itemTwo.note">{{itemTwo.note}}</h5>
       </div>
