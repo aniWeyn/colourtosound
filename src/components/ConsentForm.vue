@@ -23,6 +23,7 @@ export default {
     next(){
       this.consentVisible = false
       this.$store.commit("updateSurveyVisible", true);
+      this.$store.commit("updateResearchStartTime");
     }
   }
 };
