@@ -27,6 +27,7 @@ export default {
       saturation: String,
       lightness: String,
     }],
+    start: ""
     };
   },
   created() {
@@ -64,7 +65,7 @@ export default {
             hue: this.hue,
             saturation: this.saturation,
             lightness: this.lightness,
-            start: this.soundToColourSoundStart,
+            start: this.start,
             stop: Date.now()
           });
           
@@ -84,6 +85,7 @@ export default {
         this.$store.commit("updateLightness", 50);
         this.$store.commit("updateHue", 0);
         this.$store.commit("updateshowInstructions", false);
+        this.start = Date.now()
         this.startTone();
       } else {
         this.$store.commit("updateSoundPicker", true);
