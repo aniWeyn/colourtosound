@@ -25,8 +25,9 @@ export default {
       color: String,
       hue: String,
       saturation: String,
-      lightness: String
-    }]
+      lightness: String,
+    }],
+    soundToColourSoundStart: String,
     };
   },
   created() {
@@ -35,6 +36,8 @@ export default {
       this.notesArray[this.notesArrayIndex].notes,
       "8n"
     );
+    this.soundToColourSoundStart = Date.now()
+
     let self = this;
     firebase.auth().signInAnonymously();
 
@@ -61,7 +64,9 @@ export default {
             color: this.color,
             hue: this.hue,
             saturation: this.saturation,
-            lightness: this.lightness
+            lightness: this.lightness,
+            start: this.soundToColourSoundStart,
+            stop: Date.now()
           });
           
           this.answers.note = this.notesArray[this.notesArrayIndex].notes,
@@ -87,6 +92,7 @@ export default {
         this.$store.commit("restartNotesArrayIndex");
         this.$store.commit("updateColorPicker", false);
         this.$store.commit("blockButtonNext", true);
+        this.$store.commit("updateSoundToColourStopTime", true);
       }
     }
   },
