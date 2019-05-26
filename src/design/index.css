@@ -52,6 +52,11 @@ vue-slider {
   border: 0px !important;
 }
 
+.vue-slider-dot {
+  width: 20px !important;
+  height: 20px !important;
+}
+
 .vue-slider {
   height: 1px !important;
 }
