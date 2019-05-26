@@ -27,7 +27,6 @@ export default {
       saturation: String,
       lightness: String,
     }],
-    soundToColourSoundStart: String,
     };
   },
   created() {
@@ -36,7 +35,7 @@ export default {
       this.notesArray[this.notesArrayIndex].notes,
       "8n"
     );
-    this.soundToColourSoundStart = Date.now()
+    this.$store.commit("updateSoundToColourStartTime");
 
     let self = this;
     firebase.auth().signInAnonymously();
