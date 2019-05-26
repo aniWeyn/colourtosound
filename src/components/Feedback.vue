@@ -141,7 +141,21 @@ export default {
       let firebase = db;
       this.selectedArray[7].answer = this.text;
       firebase.ref("/users/" + this.userAuth.uid + "/feedback/").push({
-        survey: this.selectedArray
+        survey: this.selectedArray, 
+        width: screen.width,
+        height: screen.height,
+        colorDepth: screen.colorDepth,
+        pixelDepth: screen.pixelDepth,
+        availHeight: screen.availHeight,
+        availWidth: screen.availWidth,
+        orientation: screen.orientation,
+        startTime: this.$store.state.researchStartTime,
+        endTime: Date.now(),
+        soundToColourStartTime: this.$store.state.soundToColourStartTime,
+        soundToColourStopTime: this.$store.state.soundToColourStopTime,
+        colourToSoundStartTime: this.$store.state.colourToSoundStartTime,
+        colourToSoundStopTime: this.$store.state.colourToSoundStopTime,
+        devices: navigator.mediaDevices.enumerateDevices()
       });
       this.$store.commit("updateThanks", false);
       this.$store.commit("updateResults", true);
