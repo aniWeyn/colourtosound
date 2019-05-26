@@ -3,9 +3,9 @@
     <ConsentForm v-bind="html"/>
     <Survey/>
     <Progressbar v-if="research"/>
-    <colorpicker v-if="research"/>
+    <colorpicker v-if="showColorPicker"/>
     <div class>
-      <Tone v-if="research"/>
+      <Tone v-if="showColorPicker"/>
     </div>
     <Soundpicker v-if="showSoundPicker"/>
     <Feedback v-if="thanks"/>
@@ -52,7 +52,8 @@ export default {
     research: state => state.research,
     thanks: state => state.thanks,
     showResults: state => state.showResults,
-    showSoundPicker: state => state.showSoundPicker
+    showSoundPicker: state => state.showSoundPicker,
+    showColorPicker: state => state.showColorPicker
   }),
   methods: {
     test() {
@@ -99,8 +100,9 @@ export default {
       //this.trial.push(item)
       //})
 
-      this.trial.push(this.trial[this._.random(this.trial.length)]);
+      
       this.trial = this._.shuffle(this.trial);
+      this.trial = this._.concat(this.trial[this._.random(this.trial.length)], this.trial)
 
       if (this.trial && this.trial.length > 0) {
         this.trial.forEach(item => {
