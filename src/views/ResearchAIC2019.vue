@@ -56,36 +56,13 @@ export default {
   }),
   methods: {
     test() {
-      this.trial.push(
-        this.data.research[0].low2[
-          this._.random(this.data.research[0].low2.length)
-        ]
-      );
-      this.trial.push(
-        this.data.research[1].low3[
-          this._.random(this.data.research[1].low3.length)
-        ]
-      );
-      this.trial.push(
-        this.data.research[2].medium[
-          this._.random(this.data.research[2].medium.length)
-        ]
-      );
-      this.trial.push(
-        this.data.research[2].medium[
-          this._.random(this.data.research[2].medium.length)
-        ]
-      );
-      this.trial.push(
-        this.data.research[3].high5[
-          this._.random(this.data.research[3].high5.length)
-        ]
-      );
-      this.trial.push(
-        this.data.research[4].high6[
-          this._.random(this.data.research[4].high6.length)
-        ]
-      );
+      this.trial.push(this.data.research[0].low2[this._.random(this.data.research[0].low2.length)]);
+      this.trial.push(this.data.research[1].low3[this._.random(this.data.research[1].low3.length)]);
+      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)]);
+      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)]);
+      this.trial.push( this.data.research[3].high5[this._.random(this.data.research[3].high5.length)]);
+      this.trial.push(this.data.research[4].high6[this._.random(this.data.research[4].high6.length)]);
+
 
       if (this.trial && this.trial.length > 0) {
         this.trial.forEach(item => {
@@ -94,10 +71,11 @@ export default {
           }
         });
       }
-      //this.trial.forEach(item => {
-      //this.trial.push(item)
-      //this.trial.push(item)
-      //})
+      
+      this.trial.forEach(item => {
+      this.trial.push(item)
+      this.trial.push(item)
+      })
 
       
       this.trial = this._.shuffle(this.trial);
