@@ -56,7 +56,7 @@ export default {
       if (this.notesArrayIndex + 1 <= this.notesArrayLength) {
         if (this.showInstructions === false) {
           let firebase = db;
-          firebase.ref("/users/" + this.userAuth.uid + '/colourtosound/').push({
+          firebase.ref("/users/" + this.userAuth.uid + '/soundtocolor/').push({
             note: this.notesArray[this.notesArrayIndex].notes,
             color: this.color,
             hue: this.hue,
@@ -79,11 +79,14 @@ export default {
         this.$store.commit("updateSaturation", 0);
         this.$store.commit("updateLightness", 50);
         this.$store.commit("updateHue", 0);
-        this.$store.commit("updateshowInstructions");
+        this.$store.commit("updateshowInstructions", false);
         this.startTone();
       } else {
         this.$store.commit("updateSoundPicker", true);
-        this.$store.commit("updateResearch", false);
+        this.$store.commit("updateshowInstructions", true);
+        this.$store.commit("restartNotesArrayIndex");
+        this.$store.commit("updateColorPicker", false);
+        this.$store.commit("blockButtonNext", true);
       }
     }
   },

@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid p-3">
     <h3 v-if="showInstructions" class="d-flex justify-content-center">Instructions</h3>
-    <p
-      v-if="showInstructions"
-      class="d-flex justify-content-center"
+    <p v-if="showInstructions" class="d-flex justify-content-center"
     >Please choose a sound which fits best with a displayed colour.</p>
+    <p v-if="showInstructions" class="d-flex justify-content-center"
+    >This answer will not be saved.</p>
     <div class="d-flex justify-content-center p-3">
-      <div class="square" :style="{'background-color': color}"></div>
+      <div class="square" :style="{'background-color': this.answersArray[this.notesArrayIndex].color}"></div>
     </div>
     <p
       v-if="showInstructions"
@@ -36,7 +36,10 @@
     </div>
   </div>
 </template>
+
 <script>
+import db from "../data/AIC/firebase.js";
+import firebase from "firebase";
 import Tone from "tone";
 import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/antd.css";
@@ -85,12 +88,14 @@ export default {
         "B6"
       ],
       value: "C2",
-      color: "hsl(0,0%,55%)"
+      color: "hsl(0,0%,55%)",
+      answersArray: [],
+      answersTwo: []
     };
   },
   methods: {
     unlockNext(sound) {
-      //this.$store.commit("blockButtonNext", false)
+      this.$store.commit("blockButtonNext", false);
       var synth = new Tone.Synth().toMaster();
       synth.triggerAttackRelease(sound, "8n");
     },
@@ -103,40 +108,82 @@ export default {
         if (this.showInstructions === false) {
           let firebase = db;
           firebase.ref("/users/" + this.userAuth.uid + '/colourtosound/').push({
-            note: this.notesArray[this.notesArrayIndex].notes,
-            color: this.color,
-            hue: this.hue,
-            saturation: this.saturation,
-            lightness: this.lightness
+            note: this.value,
+            color: this.answersArray[this.notesArrayIndex].color,
           });
           
-          this.answers.note = this.notesArray[this.notesArrayIndex].notes,
-          this.answers.color = this.color
-          this.answers.hue = this.hue
-          this.answers.saturation = this.saturation
-          this.answers.lightness = this.lightness
-          this.$store.commit("updateAnswersNote", this.answers);
+          this.answersTwo.note = this.value,
+          this.answersTwo.color = this.answersArray[this.notesArrayIndex].color
+          this.$store.commit("updateAnswersTwoNote", this.answersTwo);
         }
       }
         if (this.notesArrayIndex + 1 < this.notesArrayLength) {
+        this.value = "C2"
         this.$store.commit("blockButtonNext", true);
         this.$store.commit("updateNotesArrayIndex");
-        this.$store.commit("updateColor", "hsl(0, 0%, 50%)");
-        this.$store.commit("updateSaturation", 0);
-        this.$store.commit("updateLightness", 50);
-        this.$store.commit("updateHue", 0);
-        this.$store.commit("updateshowInstructions");
-        this.startTone();
+        this.$store.commit("updateshowInstructions", false);
       } else {
         this.$store.commit("updateSoundPicker", false);
         this.$store.commit("updateThanks", true);
+        this.$store.commit("updateResearch", false);
       }
     }
   },
   computed: {
     showInstructions() {
       return this.$store.state.showInstructions;
+    },
+    answers() {
+      return this.$store.state.answers;
+    },
+    buttonNext() {
+      return this.$store.state.blockButtonNext;
+    },
+    notesArrayIndex() {
+      return this.$store.state.notesArrayIndex;
+    },
+    notesArrayLength() {
+      return this.$store.state.notesArrayLength;
     }
+  },
+  created() {
+    this.answersArray = this._.concat(this.answers, this.answersArray)
+    //yellow
+    this.answersArray.push({color: "hsl(60, 100%, 50%)"}) 
+    this.answersArray.push({color: "hsl(60, 50%, 50%)"})
+    this.answersArray.push({color: "hsl(60, 100%, 80%)"})
+    this.answersArray.push({color: "hsl(60, 100%, 20%)"})
+    //red
+    this.answersArray.push({color: "hsl(0, 100%, 50%)"}) 
+    this.answersArray.push({color: "hsl(0, 50%, 50%)"})
+    this.answersArray.push({color: "hsl(0, 100%, 80%)"})
+    this.answersArray.push({color: "hsl(0, 100%, 20%)"})
+    //green
+    this.answersArray.push({color: "hsl(120, 100%, 50%)"})
+    this.answersArray.push({color: "hsl(120, 50%, 50%)"})
+    this.answersArray.push({color: "hsl(120, 100%, 80%)"})
+    this.answersArray.push({color: "hsl(120, 100%, 20%)"})
+    //blue
+    this.answersArray.push({color: "hsl(240, 100%, 50%)"})
+    this.answersArray.push({color: "hsl(240, 50%, 50%)"})
+    this.answersArray.push({color: "hsl(240, 100%, 80%)"})
+    this.answersArray.push({color: "hsl(240, 100%, 20%)"})
+    //black
+    this.answersArray.push({color: "hsl(0, 0%, 0%)"})
+    //white
+    this.answersArray.push({color: "hsl(0, 100%, 100%)"})
+    this.answersArray = this._.shuffle(this.answersArray)
+
+    this.answersArray = this._.concat(this.answersArray[this._.random(this.answersArray.length)], this.answersArray)
+    this.$store.commit("updateAmountOfQuestions", this.answersArray.length);
+
+    let self = this;
+    firebase.auth().signInAnonymously();
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        self.userAuth = user;
+      }
+    });
   }
 };
 </script>

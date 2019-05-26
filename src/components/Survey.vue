@@ -104,6 +104,7 @@ export default {
       });
       this.$store.commit("updateSurveyVisible", false);
       this.$store.commit("updateResearch", true);
+      this.$store.commit("updateColorPicker", true);
     },
     addAnswer(question, answer) {
       if (question === 0) {

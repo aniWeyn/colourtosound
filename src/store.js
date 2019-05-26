@@ -13,14 +13,8 @@ export default new Vuex.Store({
     notesArrayIndex: 0,
     notesArrayLength: 0,
     shuffle: false,
-    answers: [{
-      note: "",
-      color: "",
-      hue: "",
-      saturation: "",
-      lightness: "",
-      octave: ""
-    }],
+    answers: [],
+    answersTwo: [],
     thanks:false,
     blockButtonNext: true,
     hue: 0,
@@ -31,6 +25,7 @@ export default new Vuex.Store({
     showResults: false,
     surveyVisible: false,
     showSoundPicker: false,
+    showColorPicker: false,
   },
   mutations: {
     updateConsent(state)
@@ -53,9 +48,17 @@ export default new Vuex.Store({
     {
       state.notesArrayIndex++
     },
+    restartNotesArrayIndex(state)
+    {
+      state.notesArrayIndex = 0
+    },
     updateAnswersNote(state, answers)
     {
       state.answers.push({note: answers.note, color: answers.color, hue: answers.hue, saturation: answers.saturation, lightness: answers.lightness})
+    },
+    updateAnswersTwoNote(state, answers)
+    {
+      state.answersTwo.push({note: answers.note, color: answers.color})
     },
     updateAmountOfQuestions(state, amount)
     {
@@ -82,9 +85,9 @@ export default new Vuex.Store({
     updateLightness(state, lightness){
       state.lightness = lightness
     },
-    updateshowInstructions(state)
+    updateshowInstructions(state, bool)
     {
-      state.showInstructions = false
+      state.showInstructions = bool
     },
     updateSurveyVisible(state, bool)
     {
@@ -96,6 +99,9 @@ export default new Vuex.Store({
     },
     updateSoundPicker(state, bool){
       state.showSoundPicker = bool
+    },
+    updateColorPicker(state, bool){
+      state.showColorPicker = bool
     }
   },
   actions: {

@@ -44,9 +44,8 @@ export default {
     Results,
     Soundpicker
   },
-  created() {
+  mounted() {
     this.test();
-    //this.$store.commit("updateData", true);
   },
   computed: mapState({
     research: state => state.research,
