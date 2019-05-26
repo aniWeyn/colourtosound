@@ -54,6 +54,7 @@ export default {
         this.notesArray[this.notesArrayIndex].notes,
         "8n"
       );
+      this.start = Date.now()
     },
     updateArray() {
       if (this.notesArrayIndex + 1 <= this.notesArrayLength) {
@@ -85,7 +86,6 @@ export default {
         this.$store.commit("updateLightness", 50);
         this.$store.commit("updateHue", 0);
         this.$store.commit("updateshowInstructions", false);
-        this.start = Date.now()
         this.startTone();
       } else {
         this.$store.commit("updateSoundPicker", true);
