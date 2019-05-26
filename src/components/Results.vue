@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import Tone from "tone";
 export default {
   computed: {
