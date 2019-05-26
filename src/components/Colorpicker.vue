@@ -5,8 +5,7 @@
       v-if="showInstructions"
       class="d-flex justify-content-center"
     >Please choose a colour which fits best with a heard sound.</p>
-    <p v-if="showInstructions" class="d-flex justify-content-center"
-    >This answer will not be saved.</p>
+    <p v-if="showInstructions" class="d-flex justify-content-center">This answer will not be saved.</p>
     <div class="d-flex justify-content-center p-3">
       <div class="square" :style="{'background-color': color}"></div>
     </div>
@@ -15,7 +14,7 @@
       class="d-flex justify-content-center"
     >To change colour please move range sliders.</p>
     <div class="col-md-4 offset-md-4">
-      <div class="p-3">
+      <div class="p-4">
         <p v-if="showInstructions">Hue</p>
         <vue-slider
           v-model="hue"
@@ -27,7 +26,7 @@
           @change="unlockNext()"
         />
       </div>
-      <div class="p-3">
+      <div class="p-4">
         <p v-if="showInstructions">Saturation</p>
         <vue-slider
           :tooltip="'none'"
@@ -39,7 +38,7 @@
           @change="unlockNext()"
         />
       </div>
-      <div class="p-3">
+      <div class="p-4">
         <p v-if="showInstructions">Lightness</p>
         <vue-slider
           :tooltip="'none'"
@@ -136,7 +135,7 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 0;
-  background-color: gray;
+  background-color: pink;
   transition: all 0.3s;
 }
 .custom-dot:hover {
