@@ -148,14 +148,12 @@ export default {
         pixelDepth: screen.pixelDepth,
         availHeight: screen.availHeight,
         availWidth: screen.availWidth,
-        orientation: screen.orientation,
         startTime: this.$store.state.researchStartTime,
         endTime: Date.now(),
         soundToColourStartTime: this.$store.state.soundToColourStartTime,
         soundToColourStopTime: this.$store.state.soundToColourStopTime,
         colourToSoundStartTime: this.$store.state.colourToSoundStartTime,
         colourToSoundStopTime: this.$store.state.colourToSoundStopTime,
-        devices: navigator.mediaDevices.enumerateDevices()
       });
       this.$store.commit("updateThanks", false);
       this.$store.commit("updateResults", true);
