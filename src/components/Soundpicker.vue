@@ -90,7 +90,9 @@ export default {
       value: "C2",
       color: "hsl(0,0%,55%)",
       answersArray: [],
-      answersTwo: []
+      answersTwo: [],
+      startTime: "",
+      stopTime: ""
     };
   },
   methods: {
@@ -110,6 +112,8 @@ export default {
           firebase.ref("/users/" + this.userAuth.uid + '/colourtosound/').push({
             note: this.value,
             color: this.answersArray[this.notesArrayIndex].color,
+            startTime: this.startTime,
+            stopTime: Date.now()
           });
           
           this.answersTwo.note = this.value,
@@ -122,10 +126,12 @@ export default {
         this.$store.commit("blockButtonNext", true);
         this.$store.commit("updateNotesArrayIndex");
         this.$store.commit("updateshowInstructions", false);
+        this.startTime = Date.now()
       } else {
         this.$store.commit("updateSoundPicker", false);
         this.$store.commit("updateThanks", true);
         this.$store.commit("updateResearch", false);
+        this.$store.commit("updateColourToSoundStopTime");
       }
     }
   },
@@ -184,6 +190,8 @@ export default {
         self.userAuth = user;
       }
     });
+
+    this.$store.commit("updateColourToSoundStartTime");
   }
 };
 </script>
