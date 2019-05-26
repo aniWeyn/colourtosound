@@ -5,6 +5,10 @@
       <h4>{{element.title}}</h4>
       <p>{{element.paragraph}}</p>
     </div>
+    <hr>
+    <h4>Before you start</h4>
+    <p>Please turn off applications which are changing display colours to warmer (any blue-light blocking applications) such as Night light or Flux. </p>
+    <p>If possible, please use headphones, and set volume on comfortable level.</p>
     <button type="button" class="btn btn-success" @click="next()">I agree, go to study</button>
     </section>
   </div>
