@@ -56,37 +56,63 @@ export default {
   }),
   methods: {
     test() {
-      this.trial.push(this.data.research[0].low2[this._.random(this.data.research[0].low2.length)]);
-      this.trial.push(this.data.research[1].low3[this._.random(this.data.research[1].low3.length)]);
-      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)]);
-      this.trial.push(this.data.research[2].medium[this._.random(this.data.research[2].medium.length)]);
-      this.trial.push( this.data.research[3].high5[this._.random(this.data.research[3].high5.length)]);
-      this.trial.push(this.data.research[4].high6[this._.random(this.data.research[4].high6.length)]);
-
+      this.trial.push(
+        this.data.research[0].low2[
+          this._.random(this.data.research[0].low2.length)
+        ]
+      );
+      this.trial.push(
+        this.data.research[1].low3[
+          this._.random(this.data.research[1].low3.length)
+        ]
+      );
+      this.trial.push(
+        this.data.research[2].medium[
+          this._.random(this.data.research[2].medium.length)
+        ]
+      );
+      this.trial.push(
+        this.data.research[2].medium[
+          this._.random(this.data.research[2].medium.length)
+        ]
+      );
+      this.trial.push(
+        this.data.research[3].high5[
+          this._.random(this.data.research[3].high5.length)
+        ]
+      );
+      this.trial.push(
+        this.data.research[4].high6[
+          this._.random(this.data.research[4].high6.length)
+        ]
+      );
 
       if (this.trial && this.trial.length > 0) {
-        this.trial.forEach(item => {
+        Array.from(this.trial).forEach(item => {
           if (item.note) {
             this.$store.commit("updateNotesOrdered", item.note);
           }
         });
       }
-      
-      this.trial.forEach(item => {
-      this.trial.push(item)
-      this.trial.push(item)
-      })
 
-      
+      this.trial.forEach(item => {
+        this.trial.push(item);
+        this.trial.push(item);
+      });
+
       this.trial = this._.shuffle(this.trial);
-      this.trial = this._.concat(this.trial[this._.random(this.trial.length)], this.trial)
+      this.trial = this._.concat(
+        this.trial[this._.random(this.trial.length)],
+        this.trial
+      );
 
       if (this.trial && this.trial.length > 0) {
-        this.trial.forEach(item => {
+        Array.from(this.trial).forEach(item => {
           if (item.note) {
             this.$store.commit("updateNotes", item.note);
           }
         });
+
         this.$store.commit("updateAmountOfQuestions", this.trial.length);
       }
     }
