@@ -5,6 +5,8 @@
       v-if="showInstructions"
       class="d-flex justify-content-center"
     >Please choose a colour which fits best with a heard sound.</p>
+    <p v-if="showInstructions" class="d-flex justify-content-center"
+    >This answer will not be saved.</p>
     <div class="d-flex justify-content-center p-3">
       <div class="square" :style="{'background-color': color}"></div>
     </div>
@@ -74,10 +76,6 @@ export default {
   methods: {
     unlockNext() {
       this.$store.commit("blockButtonNext", false);
-      //this.$store.commit("updateSaturation", value)
-
-      //this.$store.commit("updateLightness", value)
-
       this.$store.commit(
         "updateColor",
         "hsl(" + this.hue + "," + this.saturation + "%," + this.lightness + "%)"
