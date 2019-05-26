@@ -58,37 +58,38 @@ export default {
     test() {
       this.trial.push(
         this.data.research[0].low2[
-          this._.random(this.data.research[0].low2.length)
+          this._.random(this.data.research[0].low2.length -1)
         ]
       );
       this.trial.push(
         this.data.research[1].low3[
-          this._.random(this.data.research[1].low3.length)
+          this._.random(this.data.research[1].low3.length -1)
         ]
       );
       this.trial.push(
         this.data.research[2].medium[
-          this._.random(this.data.research[2].medium.length)
+          this._.random(this.data.research[2].medium.length -1)
         ]
       );
       this.trial.push(
         this.data.research[2].medium[
-          this._.random(this.data.research[2].medium.length)
+          this._.random(this.data.research[2].medium.length -1)
         ]
       );
       this.trial.push(
         this.data.research[3].high5[
-          this._.random(this.data.research[3].high5.length)
+          this._.random(this.data.research[3].high5.length -1)
         ]
       );
       this.trial.push(
         this.data.research[4].high6[
-          this._.random(this.data.research[4].high6.length)
+          this._.random(this.data.research[4].high6.length -1)
         ]
       );
 
       if (this.trial && this.trial.length > 0) {
         for(var i = 0; i < this.trial.length; i++){
+          console.log('for i = ' + i + ' trial[i] is ' + JSON.stringify(this.trial[i]) + ' and trial is ' + JSON.stringify(this.trial))
           console.log(this.trial[i].note)
           this.$store.commit("updateNotesOrdered", this.trial[i].note);
         }
