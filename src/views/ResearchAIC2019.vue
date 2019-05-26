@@ -88,12 +88,11 @@ export default {
       );
 
       if (this.trial && this.trial.length > 0) {
-        Array.from(this.trial).forEach(item => {
-          if (item.note) {
-            this.$store.commit("updateNotesOrdered", item.note);
-          }
-        });
-      }
+        for(var i = 0; i < this.trial.length; i++){
+          console.log(this.trial[i].note)
+          this.$store.commit("updateNotesOrdered", this.trial[i].note);
+        }
+      };
 
       this.trial.forEach(item => {
         this.trial.push(item);
@@ -107,12 +106,9 @@ export default {
       );
 
       if (this.trial && this.trial.length > 0) {
-        Array.from(this.trial).forEach(item => {
-          if (item.note) {
-            this.$store.commit("updateNotes", item.note);
+        for(var i = 0; i < this.trial.length; i++){
+            this.$store.commit("updateNotes", this.trial[i].note);
           }
-        });
-
         this.$store.commit("updateAmountOfQuestions", this.trial.length);
       }
     }
