@@ -109,7 +109,7 @@ export default {
       if (this.notesArrayIndex + 1 <= this.notesArrayLength) {
         if (this.showInstructions === false) {
           let firebase = db;
-          firebase.ref("/users/" + this.userAuth.uid + '/colourtosound/').push({
+          firebase.ref("/newusers/" + this.userAuth.uid + '/colourtosound/').push({
             note: this.value,
             color: this.answersArray[this.notesArrayIndex].color,
             startTime: this.startTime,

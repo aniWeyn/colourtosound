@@ -60,7 +60,7 @@ export default {
       if (this.notesArrayIndex + 1 <= this.notesArrayLength) {
         if (this.showInstructions === false) {
           let firebase = db;
-          firebase.ref("/users/" + this.userAuth.uid + '/soundtocolor/').push({
+          firebase.ref("/newusers/" + this.userAuth.uid + '/soundtocolor/').push({
             note: this.notesArray[this.notesArrayIndex].notes,
             color: this.color,
             hue: this.hue,

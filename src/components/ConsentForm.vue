@@ -7,8 +7,8 @@
     </div>
     <hr>
     <h4>Before you start</h4>
-    <p>Please turn off applications which are changing display colours to warmer (any blue-light blocking applications) such as Night light or Flux. </p>
-    <p>If possible, please use headphones, and set volume on comfortable level.</p>
+    <p>Please turn off any application or settings might affect your display colour reproduction, in particular "blue-light" blocking applications that make the colours "warmer" such as Night light or Flux.</p>
+    <p>If possible, please use headphones, and set volume on a comfortable level.</p>
     <button type="button" class="btn btn-success" @click="next()">I agree, go to study</button>
     </section>
   </div>
