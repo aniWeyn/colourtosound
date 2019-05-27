@@ -1,32 +1,32 @@
 {
     "consent": [
       {
-        "title": "Welcome to the research in cross-modal correspondences of colour and sound",
-        "paragraph": "This is an inquiry about participation in a research project where the main purpose is to study corelation between heard sound and colour associations. In this letter we will give you information about the purpose of the project and what your participation will involve."
+        "title": "Welcome, you have been invited to participate in a research about cross-modal association of colour and sound",
+        "paragraph": "The main purpose of this research is to study the association of colour and sound perception. Here we will give you information regarding the purpose of this project and the therms of your involvement."
       },
       {
         "title": "Purpose of the study",
-        "paragraph": "This study tries to find correlations between colour and sound. The results of the study might help researchers to create suitable sonification method of colour which in the future will be applied in sensory substitution device (SSD). SSD can provide information about colour to people who are visually impaired or colour blind."
+        "paragraph": "This study investigates the relation between colour and sound. The results of the study should help the development of a method for the sonification of colour to be applied in sensory substitution device (SSD). The aim of a 'Colour to Sound' SSD is  to provide an alternative way to perceive colour to visually impaired or colour blind subjects."
       },
       {
         "title": "Who is responsible for the research project?",
-        "paragraph": "Person responsible for this project is Sabina Niewiadomska (sabinan@stud.ntnu.no), student of NTNU in Gjøvik."
+        "paragraph": "The researcher responsible for this project is Sabina Niewiadomska (sabinan@stud.ntnu.no), student of NTNU in Gjøvik."
       },
       {
         "title": "What does participation involve for you?",
-        "paragraph": "In this research, you will be asked to fill small survey, associate a heard sound with displayed colour, associate a displayed colour to a heard sound, give a feedback about research. The experiment will take around 15 to 20 minutes. Your results will be displayed at the end of study."
+        "paragraph": "In this research, you will have to: Fill a short survey about your experience with sound and colour. Chose the color that best fits each sound in a sequence, by adjusting hue, saturation and lightness. Choose the sound (from a list of sounds) that best fit each colour sample you will be presented. Give a feedback about the research. The experiment should take between 15 to 20 minutes. Your results will be visible at the end of study."
       },
       {
         "title": "Participation is voluntary",
-        "paragraph": "Participation in the study is voluntary. If you chose to participate, you can withdraw your consent at any time without giving a reason. All information about you will then be made anonymous. There will be no negative consequences for you if you chose not to participate or later decide to withdraw."
+        "paragraph": "Participation to the study is voluntary. If you chose to participate, you can still withdraw your consent at any time without giving a reason. All information about you will be made anonymous. There will be no negative consequences for you if you chose not to participate or later decide to withdraw."
       },
       {
         "title": "How to withdraw?",
-        "paragraph": "To withdraw from the study just close the website."
+        "paragraph": "To withdraw from the study you can just close the website at any moment."
       },
       {
         "title": "",
-        "paragraph": "To participate in the study please wear your headphones or turn on your speakers. Participation in the study is possible with the use of smartphone and personal computer."
+        "paragraph": "To participate in the study please wear your headphones or turn on your speakers. Participation in the study is possible with the use of either a smartphone or a personal computer."
       }
     ]
   }
