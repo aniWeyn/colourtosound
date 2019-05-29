@@ -1,0 +1,30 @@
+    soundTocolor() {
+      let jsonPathDataC2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='C2')]",
+        json: this.data
+      });
+      let jsonPathDataD2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='D2')]",
+        json: this.data
+      });
+      let jsonPathDataE2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='E2')]",
+        json: this.data
+      });
+      let jsonPathDataF2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='F2')]",
+        json: this.data
+      });
+      let jsonPathDataG2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='G2')]",
+        json: this.data
+      });
+      let jsonPathDataA2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='A2')]",
+        json: this.data
+      });
+      let jsonPathDataB2 = JSONPath({
+        path: "$.newusers[*].soundtocolor[[?(@.note=='B2')]",
+        json: this.data
+      });
+    },

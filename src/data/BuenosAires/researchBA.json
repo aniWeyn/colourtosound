@@ -1,0 +1,49 @@
+{
+    "research": [
+        {"low2": [
+            {"note":"C2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"D2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"E2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"F2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"G2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"A2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"},
+            {"note":"B2", "octave": "low2", "noteLetter": "C", "noteOctave": "2"}
+        ]},
+        {"low3": [ 
+            {"note":"C3"},
+            {"note":"D3"},
+            {"note":"E3"},
+            {"note":"F3"},
+            {"note":"G3"},
+            {"note":"A3"},
+            {"note":"B3"}
+        ]},
+        {"medium": [
+            {"note":"C4"},
+            {"note":"D4"},
+            {"note":"E4"},
+            {"note":"F4"},
+            {"note":"G4"},
+            {"note":"A4"},
+            {"note":"B4"}
+        ]},
+        {"high5": [
+            {"note":"C5"},
+            {"note":"D5"},
+            {"note":"E5"},
+            {"note":"F5"},
+            {"note":"G5"},
+            {"note":"A5"},
+            {"note":"B5"}
+        ]},
+        {"high6": [
+            {"note":"C6"},
+            {"note":"D6"},
+            {"note":"E6"},
+            {"note":"F6"},
+            {"note":"G6"},
+            {"note":"A6"},
+            {"note":"B6"}
+        ]}
+    ]
+}

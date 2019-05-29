@@ -1,0 +1,84 @@
+{
+    "survey": [
+        {
+          "question": "Is the length of study appropriate?",
+          "answers": [
+            { value: "1", text: "1 (Too short)" },
+            { value: "2", text: "2" },
+            { value: "3", text: "3" },
+            { value: "4", text: "4" },
+            { value: "5", text: "5 (Too long)" },
+            { value: "0", text: "No opinion" }
+          ],
+          selected: ""
+        },
+        {
+          question: "Could you hear all sounds?",
+          answers: [
+            { value: "1", text: "1 (I couldn't hear sounds)" },
+            { value: "2", text: "2" },
+            { value: "3", text: "3" },
+            { value: "4", text: "4" },
+            { value: "5", text: "5 (I could hear all sounds)" },
+            { value: "0", text: "No opinion" }
+          ],
+          selected: ""
+        },
+        {
+          question: "How bright is the screen of your device?",
+          answers: [
+            { value: "1", text: "1 (Very dark)" },
+            { value: "2", text: "2" },
+            { value: "3", text: "3" },
+            { value: "4", text: "4" },
+            { value: "5", text: "5 (Very bright)" },
+            { value: "0", text: "I don't know" }
+          ],
+          selected: ""
+        },
+        {
+          question: "What device are you using during study participation?",
+          answers: [
+            { value: "1", text: "Tablet" },
+            { value: "2", text: "Smartphone" },
+            { value: "3", text: "Personal computer" },
+            { value: "4", text: "Other" }
+          ],
+          selected: ""
+        },
+        {
+          question:
+            "Are you listening sounds of the study on speakers or headphones?",
+          answers: [
+            { value: "1", text: "My device speakers" },
+            { value: "2", text: "Headphones" },
+            { value: "3", text: "External speakers" },
+            { value: "4", text: "Other" }
+          ],
+          selected: ""
+        },
+        {
+          question: "Are suffering from any hearing loss?",
+          answers: [
+            { value: "1", text: "No (and I checked it with doctor)" },
+            { value: "2", text: "No (but I didn't check it with doctor)" },
+            { value: "3", text: "Yes (and I checked it with doctor)" },
+            { value: "4", text: "Yes (but I didn't check it with doctor)" },
+            { value: "5", text: "I might" },
+            { value: "0", text: "I don't know" }
+          ],
+          selected: ""
+        },
+        {
+          question:
+            "Are you experiencing tinnitus (unexpected high-pitched ringing or hissing sound or low pitched sound)?",
+          answers: [
+            { value: "1", text: "Yes" },
+            { value: "2", text: "No" },
+            { value: "3", text: "I might" },
+            { value: "0", text: "I don't know" }
+          ],
+          selected: ""
+        }
+      ]
+}
