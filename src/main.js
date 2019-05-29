@@ -16,6 +16,9 @@ import "./design/index.css"
 import 'firebase/auth';
 import 'firebase/database';
 
+import Highcharts from 'highcharts'
+exportingInit(Highcharts)
+import exportingInit from 'highcharts/modules/exporting'
 import HighchartsVue from 'highcharts-vue'
 Vue.use(HighchartsVue)
 
