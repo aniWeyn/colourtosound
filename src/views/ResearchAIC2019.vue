@@ -89,11 +89,9 @@ export default {
 
       if (this.trial && this.trial.length > 0) {
         for(var i = 0; i < this.trial.length; i++){
-          console.log('for i = ' + i + ' trial[i] is ' + JSON.stringify(this.trial[i]) + ' and trial is ' + JSON.stringify(this.trial))
-          console.log(this.trial[i].note)
           this.$store.commit("updateNotesOrdered", this.trial[i].note);
         }
-      };
+      }
 
       this.trial.forEach(item => {
         this.trial.push(item);
@@ -107,8 +105,8 @@ export default {
       );
 
       if (this.trial && this.trial.length > 0) {
-        for(var i = 0; i < this.trial.length; i++){
-            this.$store.commit("updateNotes", this.trial[i].note);
+        for(var j = 0; j < this.trial.length; j++){
+            this.$store.commit("updateNotes", this.trial[j].note);
           }
         this.$store.commit("updateAmountOfQuestions", this.trial.length);
       }
