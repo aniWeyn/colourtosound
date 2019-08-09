@@ -99,7 +99,7 @@ export default {
   methods: {
     next() {
       let firebase = db;
-      firebase.ref("/newusers/" + this.userAuth.uid+"/survey/").push({
+      firebase.ref("/bugfix/" + this.userAuth.uid+"/survey/").push({
         survey: this.selectedArray
       });
       this.$store.commit("updateSurveyVisible", false);

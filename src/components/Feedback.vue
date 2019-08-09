@@ -140,7 +140,7 @@ export default {
     next() {
       let firebase = db;
       this.selectedArray[7].answer = this.text;
-      firebase.ref("/newusers/" + this.userAuth.uid + "/feedback/").push({
+      firebase.ref("/bugfix/" + this.userAuth.uid).push({
         survey: this.selectedArray, 
         width: screen.width,
         height: screen.height,
