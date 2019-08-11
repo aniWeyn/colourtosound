@@ -42,7 +42,6 @@ import db from "../data/AIC/firebase.js";
 import firebase from "firebase";
 import Tone from "tone";
 import VueSlider from "vue-slider-component";
-import "vue-slider-component/theme/antd.css";
 export default {
   name: "colorpicker",
   components: {
@@ -197,18 +196,4 @@ export default {
 </script>
 
 <style scss>
-.custom-dot {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  background-color: gray;
-  transition: all 0.3s;
-}
-.custom-dot:hover {
-  transform: rotateZ(45deg);
-  background-color: pink;
-}
-.custom-dot.focus {
-  background-color: pink;
-}
 </style>

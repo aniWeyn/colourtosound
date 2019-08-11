@@ -5,9 +5,14 @@ import store from './store'
 
 import VueLodash from 'vue-lodash'
 Vue.use(VueLodash)
-//import BootstrapVue from 'bootstrap-vue'
-//import 'bootstrap-vue/dist/bootstrap-vue.css'
-//Vue.use(BootstrapVue)
+
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue)
+
+import VueSlider from 'vue-slider-component'
+import 'vue-slider-component/theme/default.css'
+Vue.component('VueSlider', VueSlider)
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'

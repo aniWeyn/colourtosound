@@ -51,14 +51,6 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Charts.vue')
     },
     {
-      path: '/resultsScale',
-      name: 'resultsScale',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './components/ResultsPiano.vue')
-    },
-    {
       path: '/results-colour-scales',
       name: 'results-colour-scales',
       // route level code-splitting
