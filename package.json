@@ -13,7 +13,7 @@
     "bootstrap-vue": "^2.0.0-rc.18",
     "core-js": "^2.6.5",
     "firebase": "^5.11.1",
-    "highcharts": "^7.1.1",
+    "highcharts": "^7.2.2",
     "highcharts-vue": "^1.2.0",
     "jquery": "^3.4.0",
     "jsonpath": "^1.0.1",
